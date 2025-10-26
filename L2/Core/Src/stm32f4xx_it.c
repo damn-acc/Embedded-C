@@ -211,6 +211,12 @@ void EXTI0_IRQHandler(void)
 		ledAlgN = 0;
 	}
 
+	unsigned int cnt;
+	cnt = 500000;
+	while (cnt--) {
+		asm("nop");
+	}
+
   /* USER CODE END EXTI0_IRQn 0 */
   HAL_GPIO_EXTI_IRQHandler(GPIO_PIN_0);
   /* USER CODE BEGIN EXTI0_IRQn 1 */
