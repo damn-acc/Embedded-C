@@ -31,7 +31,10 @@
 
 /* Private define ------------------------------------------------------------*/
 /* USER CODE BEGIN PD */
-
+#define LED_GREEN_CHANNEL TIM_CHANNEL_1
+#define LED_ORANGE_CHANNEL TIM_CHANNEL_2
+#define LED_RED_CHANNEL TIM_CHANNEL_3
+#define LED_BLUE_CHANNEL TIM_CHANNEL_4
 /* USER CODE END PD */
 
 /* Private macro -------------------------------------------------------------*/
@@ -90,13 +93,13 @@ int main(void)
   MX_GPIO_Init();
   MX_TIM4_Init();
   /* USER CODE BEGIN 2 */
-  HAL_TIM_PWM_Start(&htim4, TIM_CHANNEL_1);
-  TIM4->CCR1 = 296;
-  HAL_TIM_PWM_Start(&htim4, TIM_CHANNEL_2);
-  TIM4->CCR2 = 463;
-  HAL_TIM_PWM_Start(&htim4, TIM_CHANNEL_3);
-  TIM4->CCR3 = 125;
-  HAL_TIM_PWM_Start(&htim4, TIM_CHANNEL_4);
+  HAL_TIM_PWM_Start(&htim4, LED_GREEN_CHANNEL);
+  TIM4->CCR1 = 463;
+  HAL_TIM_PWM_Start(&htim4, LED_ORANGE_CHANNEL);
+  TIM4->CCR2 = 125;
+  HAL_TIM_PWM_Start(&htim4, LED_RED_CHANNEL);
+  TIM4->CCR3 = 296;
+  HAL_TIM_PWM_Start(&htim4, LED_BLUE_CHANNEL);
   TIM4->CCR4 = 260;
   /* USER CODE END 2 */
 
